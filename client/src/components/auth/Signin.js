@@ -4,7 +4,7 @@ import { compose } from 'redux';
 import { connect } from 'react-redux';
 import * as actions from '../../actions';
 
-class Signup extends Component {
+class Signin extends Component {
 
     onSubmit = (formProps) => {
         this.props.signup(formProps, ()=>{
@@ -29,7 +29,7 @@ class Signup extends Component {
                 <div>
                     {this.props.errorMessage}
                 </div>
-                <button type="submit">Sign Up!</button>
+                <button type="submit">Sign In!</button>
             </form>
         )
     }
@@ -41,5 +41,5 @@ function mapStateToProps(state) {
 
 export default compose(
     connect(mapStateToProps, actions),
-    reduxForm({ form: 'signup' })
-)(Signup)
+    reduxForm({ form: 'signin' })
+)(Signin)
